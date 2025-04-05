@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+
+<div class="pokedex">
+  <h1 class="head"><%= type.charAt(0).toUpperCase() + type.slice(1) %> Type Pokémon</h1>
+
+  <% if (pokemonList && pokemonList.length > 0) { %>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <% pokemonList.forEach(pokemon => { %>
+          <div class="swiper-slide">
+            <div class="pokemon-card">
+              <a href="/pokemon?name=<%= pokemon.pokemon.name %>">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokemon.url.split('/')[6] %>.png"
+                     alt="<%= pokemon.pokemon.name %>">
+                <h3><%= pokemon.pokemon.name %></h3>
+              </a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+
+      <!-- Carousel controls -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  <% } else { %>
+    <p>No Pokémon found.</p>
+  <% } %>
+
+  <a href="/" class="back-btn">Back to Home</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    centeredSlides: true,
+    spaceBetween: 10, // Adjust gap between cards
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: 1,
+    breakpoints: {
+      480: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+      }
+    }
+  });
+</script>
+
+<%- include('partials/footer') %>

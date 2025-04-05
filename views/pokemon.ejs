@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+<% if (pokemon) { %>
+  <h1><%= pokemon.name %></h1>
+  <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+  <p><strong>Pokedex Entry: </strong> <%= pokedexEntry %></p>
+
+  <p>Base Stats:</p>
+  <ul>
+    <% pokemon.stats.forEach(stat => { %>
+      <li><strong><%= stat.stat.name %>:</strong>
+        <progress value="<%= stat.base_stat %>" max="255"></progress> <%= stat.base_stat %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <p>Abilities:</p>
+  <ul>
+    <% pokemon.abilities.forEach(ability => { %>
+      <li><%= ability.ability.name %></li>
+    <% }) %>
+  </ul>
+
+  <h2>Evolution Chain:</h2>
+  <ul>
+    <% if (evolutions.length > 1) { %>
+      <% evolutions.forEach(evo => { %> 
+        <li><a href="<%= evo.url %>"><%= evo.name %></a></li>
+      <% }) %>
+    <% } else { %>
+      <li>No Evolutions Available</li>
+    <% } %>
+  </ul>
+
+  <% if (prevPokemon) { %>
+    <a href="/pokemon?name=<%= prevPokemon %>"><button class="btn">Previous</button></a>
+  <% } %>
+  <% if (nextPokemon) { %>
+    <a href="/pokemon?name=<%= nextPokemon %>"><button class="btn">Next</button></a>
+  <% } %>
+
+<% } else { %>
+  <h2><%= error || "Something went wrong." %></h2>
+<% } %>
+
+<a href="/">Back to Search</a>
+<%- include('partials/footer') %>

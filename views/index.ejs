@@ -1,0 +1,48 @@
+<%- include("partials/header") %> 
+<div class="main1">
+    <div class="heading">
+<h1 class="center main">Welcome to POKEWORLD!</h1> 
+<img src="/images/pokeball.gif" alt="pokeball" class="center main pokeball" width="200px" height="200px">
+</div>
+<div class="main2">
+<form action="/pokemon" method="get" class="form">
+    <label for="name" class="sr-only">Pokemon Name</label>
+    <input type="text" id="name" name="name" class="inputname" placeholder="Enter pokemon name.." required>
+   
+<button class="inputbtn btn" type="submit">Search</button>
+</form>
+<a href="/random" class="btn form">Random Pokemon</a>
+<a href="/pokedex" class="btn form">Show Pokedex</a>
+<!-- giving option to see pokemon of different type using dropdown-->
+<form  id="typeForm" class="form">
+    <label for="type" style="font-size: 40px; color:rgb(124, 101, 71)">Choose Pokemon Type:</label>
+    <select name="type" id="type">
+        <option value="fire">Fire 🔥</option>
+        <option value="water">Water 💧</option>
+        <option value="grass">Grass 🍃</option>
+        <option value="electric">Electric ⚡</option>
+        <option value="psychic">Psychic 🔮</option>
+        <option value="rock">Rock 🪨</option>
+        <option value="ground">Ground 🌍</option>
+        <option value="ice">Ice ❄️</option>
+        <option value="bug">Bug 🐛</option>
+        <option value="ghost">Ghost 👻</option>
+        <option value="dragon">Dragon 🐉</option>
+        <option value="dark">Dark 🌑</option>
+        <option value="steel">Steel 🏗️</option>
+        <option value="fairy">Fairy ✨</option>
+        <option value="fighting">Fighting 🥊</option>
+        <option value="normal">Normal 🐾</option>
+        <option value="poison">Poison ☠️</option>
+        <option value="flying">Flying 🕊️</option>
+    </select>
+    <button type="button" class="btn form" onclick="gotoTypepage()">Search</button>
+</form>
+</div></div>
+<script>
+    function gotoTypepage() {
+        let selecttype = document.getElementById("type").value;
+        window.location.href = `/type/${selecttype}`; // setting the URL of browser
+    }
+</script>
+<%- include("partials/footer") %> 

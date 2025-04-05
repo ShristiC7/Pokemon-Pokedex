@@ -1,0 +1,150 @@
+body{
+    position: absolute;
+    padding: 0px;
+    background-color: rgb(4, 4, 62);
+    color: rgb(127, 127, 5);
+    }
+
+.main1{
+    margin: auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(10, 30fr);
+    grid-template-rows: repeat(5,100px);
+   
+}
+
+.heading{
+display: flex;
+position: fixed;
+top: 20%;
+left: 30%;
+padding: 0;
+justify-content: center;
+flex-direction: row;
+}
+
+.pokeball{
+    margin: 0px;
+}
+.main{
+    margin: 0px;
+    padding: 0px;
+  font-size: 50px;
+}
+.main2{
+grid-area: 3/5/5/8 ;
+}
+.form{
+margin: 20px;
+padding: 20px;
+font-size: 30px;
+}
+
+.btn{
+    margin: 20px;
+    font-size: 15px;
+    width: auto;
+    height: 35px;
+    padding: 4px;
+    border: 6px solid rgb(142, 142, 4);
+    background-color: rgb(160, 160, 13);
+    border-radius: 9px;
+    color: rgb(70, 3, 3);
+}
+#typeForm{
+    display: block;
+}
+a{
+  color: blanchedalmond;
+}
+ 
+.pokedex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+  
+  .head {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Carousel styling */
+  .swiper {
+    width: 75%;       /* use more width */
+    height: 250px;
+    max-width: 1500px; /* let it grow wider */
+  }
+  
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Add spacing between slides */
+  /* .swiper-slide:not(:last-child) {
+    margin-right: 20px;
+  } */
+  
+  .pokemon-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    height: 100%;
+     transition: transform 0.3s;
+  }
+  
+  .pokemon-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .pokemon-card img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .pokemon-card h3 {
+    margin-top: 10px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: #000;
+  }
+  
+  /* Navigation buttons */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #333;
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Back button */
+  .back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+  }
+  
+  .back-btn:hover {
+    background-color: #ffaa00;
+  }
+  
